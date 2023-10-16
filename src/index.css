@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    overflow-x: hidden;
+}
+.background {
+    background-image: url(./images/backg.png)  ;
+}
+.centre1 {
+    position: relative;
+    transition: transform 0.5s ease;
+  }
+  
+  .centre1:hover {
+    color: #ff5d56;
+    transform: translateX(50px); /* Move the div out on hover */
+  }
+  
+  .centre1::before,
+  .centre1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+    transition: transform 0.5s ease; /* Apply transition to the pseudo-elements */
+  }
+  
+  .centre1::before {
+    border-top: 2px solid #ff5d56;
+    border-bottom: 2px solid #ff5d56;
+    transform: scale3d(0, 1, 1);
+  }
+  
+  .centre1::after {
+    border-left: 2px solid #ff5d56;
+    border-right: 2px solid #ff5d56;
+    transform: scale3d(1, 0, 1);
+  }
+  
+  .centre1:hover::before,
+  .centre1:hover::after {
+    transform: scale3d(1, 1, 1);
+  }
+   
+  
+  
